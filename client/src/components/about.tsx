@@ -29,8 +29,8 @@ export default function About() {
           
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Motorcycle consultation meeting" 
+              src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+              alt="Professional motorcycle gear and equipment consultation" 
               className="rounded-xl shadow-2xl w-full h-auto border-2 border-chrome-dark"
             />
             <div className="absolute -bottom-6 -right-6 bg-orange-accent text-dark-primary p-4 rounded-xl font-bold text-lg">

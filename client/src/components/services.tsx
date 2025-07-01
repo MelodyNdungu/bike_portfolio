@@ -5,26 +5,26 @@ const services = [
   {
     icon: Bike,
     title: "Motorcycle Type Consultation",
-    description: "Find the perfect bike that matches your riding style, experience level, and intended use.",
-    price: "Starting at $75",
+    description: "Find the perfect bike that matches your riding style, experience level, and intended use. Adventure bikes, sport bikes, or cruisers - which suits you?",
+    price: "Starting at KSH 6,500",
   },
   {
     icon: DollarSign,
     title: "Budget Guidance",
-    description: "Smart financial planning for your motorcycle purchase, insurance, and ongoing maintenance costs.",
-    price: "Starting at $50",
+    description: "Smart financial planning for your motorcycle purchase, insurance, licensing, and ongoing maintenance costs in Kenya.",
+    price: "Starting at KSH 4,500",
   },
   {
     icon: Shield,
-    title: "Confidence Riding",
-    description: "Build confidence and skills with personalized riding techniques and safety protocols for beginners.",
-    price: "Starting at $100",
+    title: "Confidence Riding for Beginners",
+    description: "Build confidence and master essential riding skills with personalized training. Learn proper techniques, safety protocols, and defensive riding strategies.",
+    price: "Starting at KSH 8,500",
   },
   {
     icon: HardHat,
     title: "Equipment Recommendations",
-    description: "Expert advice on helmets, protective gear, and accessories that match your needs and budget.",
-    price: "Starting at $60",
+    description: "Expert advice on helmets, protective gear, and accessories. Find quality equipment that fits your needs and budget in the Kenyan market.",
+    price: "Starting at KSH 5,500",
   },
 ];
 

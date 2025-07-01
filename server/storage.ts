@@ -50,68 +50,133 @@ export class MemStorage implements IStorage {
     this.currentTwitterPostId = 1;
     
     this.seedGearProducts();
+    this.seedTwitterPosts();
   }
 
   private seedGearProducts() {
     const products: InsertGearProduct[] = [
       {
-        name: "Premium Helmets",
-        description: "DOT and ECE certified helmets from top brands",
+        name: "Adventure Helmets",
+        description: "Premium dual-sport helmets for adventure touring",
         category: "helmets",
-        priceMin: 120,
-        priceMax: 800,
-        imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+        priceMin: 8500,
+        priceMax: 65000,
+        imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
         inStock: true,
       },
       {
-        name: "Protective Gear",
-        description: "Armored jackets, pants, and protective equipment",
+        name: "Riding Jackets & Pants",
+        description: "Waterproof adventure riding gear with armor protection",
         category: "protection",
-        priceMin: 80,
-        priceMax: 500,
-        imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+        priceMin: 12000,
+        priceMax: 45000,
+        imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
         inStock: true,
       },
       {
-        name: "Gloves & Boots",
-        description: "Durable gloves and boots for all-weather riding",
+        name: "Adventure Boots & Gloves",
+        description: "Durable off-road boots and all-weather riding gloves",
         category: "accessories",
-        priceMin: 45,
-        priceMax: 300,
-        imageUrl: "https://pixabay.com/get/g99f2081269647da7cb41a8f935d8700f375c8bf4914acc2ee5d708a8927638d7ff8cedc823878b8b8f05fc5e1d5e86e6b2c2d5535c577df40e500465e27c1d23_1280.jpg",
+        priceMin: 6500,
+        priceMax: 28000,
+        imageUrl: "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
         inStock: true,
       },
       {
-        name: "Tech & Accessories",
-        description: "GPS, communication systems, and tech upgrades",
+        name: "Navigation & Communication",
+        description: "GPS units, intercoms, and motorcycle tech accessories",
         category: "tech",
-        priceMin: 25,
-        priceMax: 600,
-        imageUrl: "https://pixabay.com/get/g2707f859787d7faf4231e5cd0b571aab71c045f4ee3fbe3f9160c3dd41ce511fccbefb39687a8de5c0de698b99a103346fa4f63276ac55e9a9bcdd1022c36a16_1280.jpg",
+        priceMin: 3500,
+        priceMax: 55000,
+        imageUrl: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
         inStock: true,
       },
       {
-        name: "Maintenance Tools",
-        description: "Essential tools and supplies for bike maintenance",
+        name: "Maintenance & Tools",
+        description: "Essential motorcycle maintenance tools and spare parts",
         category: "tools",
-        priceMin: 15,
-        priceMax: 200,
-        imageUrl: "https://pixabay.com/get/g6b3e1a477f4345349a894f0e8f45cf59bca3e73b4e4b16fa070d1460c99359e877a045b66164292d799d6a11d979a0b97315bbd2fa62af1acf1c6717a5937d99_1280.jpg",
+        priceMin: 2500,
+        priceMax: 18000,
+        imageUrl: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
         inStock: true,
       },
       {
-        name: "Touring Gear",
-        description: "Luggage, saddlebags, and long-distance accessories",
+        name: "Adventure Luggage",
+        description: "Panniers, top boxes, and touring luggage systems",
         category: "touring",
-        priceMin: 50,
-        priceMax: 400,
-        imageUrl: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+        priceMin: 8000,
+        priceMax: 35000,
+        imageUrl: "https://images.unsplash.com/photo-1609630875171-b1321377ee65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
         inStock: true,
       },
     ];
 
     products.forEach(product => {
       this.createGearProduct(product);
+    });
+  }
+
+  private seedTwitterPosts() {
+    const posts: InsertTwitterPost[] = [
+      {
+        tweetId: "tweet_001",
+        content: "Hello, aspiring biker! 🏍️\n\nChoosing the right motorcycle isn't just about picking a model, it's about finding the perfect fit for your needs & budget. I offer consultation sessions to guide you through essential factors such as:\n✅ Motorcycle types – Which suits your riding style?",
+        author: "NduthiGear",
+        handle: "nduthigear",
+        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
+        likes: 24,
+        retweets: 8,
+        replies: 5,
+        imageUrl: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      },
+      {
+        tweetId: "tweet_002", 
+        content: "Adventure bike spotlight: BMW GS series vs Honda Africa Twin 🏁\n\nBoth are excellent choices for Kenya's diverse terrain:\n- BMW: Superior electronics, premium feel\n- Honda: Better value, proven reliability\n\nWhich would you choose for your next adventure?",
+        author: "NduthiGear",
+        handle: "nduthigear", 
+        createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 hours ago
+        likes: 42,
+        retweets: 15,
+        replies: 12,
+        imageUrl: "https://images.unsplash.com/photo-1609630875171-b1321377ee65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      },
+      {
+        tweetId: "tweet_003",
+        content: "Safety tip for new riders: Your gear is just as important as your skills! 🛡️\n\n Essential protective equipment:\n• DOT/ECE approved helmet\n• Armored jacket & pants\n• Quality boots & gloves\n• Back protector\n\nYour life is worth the investment. #RideSafe",
+        author: "NduthiGear",
+        handle: "nduthigear",
+        createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000), // 8 hours ago
+        likes: 67,
+        retweets: 28,
+        replies: 9,
+        imageUrl: null,
+      },
+      {
+        tweetId: "tweet_004",
+        content: "Confidence riding tip: Master the basics before attempting advanced maneuvers! 💪\n\nStart with:\n1. Smooth throttle control\n2. Progressive braking\n3. Body positioning\n4. Looking where you want to go\n\nBook a confidence session if you need guidance!",
+        author: "NduthiGear", 
+        handle: "nduthigear",
+        createdAt: new Date(Date.now() - 12 * 60 * 60 * 1000), // 12 hours ago
+        likes: 38,
+        retweets: 19,
+        replies: 7,
+        imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      },
+      {
+        tweetId: "tweet_005",
+        content: "Maintenance Monday! 🔧\n\nRegular maintenance keeps you safe and saves money:\n• Check tire pressure weekly\n• Clean & lube chain every 500km\n• Oil changes every 3,000km\n• Brake inspection monthly\n\nYour bike will thank you with reliable performance!",
+        author: "NduthiGear",
+        handle: "nduthigear", 
+        createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+        likes: 29,
+        retweets: 11,
+        replies: 4,
+        imageUrl: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      }
+    ];
+
+    posts.forEach(post => {
+      this.createTwitterPost(post);
     });
   }
 
@@ -160,7 +225,11 @@ export class MemStorage implements IStorage {
 
   private async createGearProduct(insertGearProduct: InsertGearProduct): Promise<GearProduct> {
     const id = this.currentGearProductId++;
-    const gearProduct: GearProduct = { ...insertGearProduct, id };
+    const gearProduct: GearProduct = { 
+      ...insertGearProduct, 
+      id,
+      inStock: insertGearProduct.inStock ?? true
+    };
     this.gearProducts.set(id, gearProduct);
     return gearProduct;
   }
@@ -172,7 +241,14 @@ export class MemStorage implements IStorage {
 
   async createTwitterPost(insertTwitterPost: InsertTwitterPost): Promise<TwitterPost> {
     const id = this.currentTwitterPostId++;
-    const twitterPost: TwitterPost = { ...insertTwitterPost, id };
+    const twitterPost: TwitterPost = { 
+      ...insertTwitterPost, 
+      id,
+      likes: insertTwitterPost.likes ?? 0,
+      retweets: insertTwitterPost.retweets ?? 0,
+      replies: insertTwitterPost.replies ?? 0,
+      imageUrl: insertTwitterPost.imageUrl ?? null
+    };
     this.twitterPosts.set(id, twitterPost);
     return twitterPost;
   }

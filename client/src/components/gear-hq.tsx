@@ -61,7 +61,7 @@ export default function GearHQ() {
                   <p className="text-gray-400 mb-4">{product.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-orange-accent font-bold text-lg">
-                      ${product.priceMin} - ${product.priceMax}
+                      KSH {product.priceMin.toLocaleString()} - {product.priceMax.toLocaleString()}
                     </span>
                     <Button 
                       size="sm"

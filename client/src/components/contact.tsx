@@ -228,8 +228,8 @@ export default function Contact() {
           
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Night motorcycle ride with dramatic city lighting" 
+              src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+              alt="Adventure motorcycle ready for touring with luggage setup" 
               className="rounded-xl shadow-2xl w-full h-auto border-2 border-chrome-dark"
             />
             
