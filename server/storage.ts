@@ -12,6 +12,8 @@ import {
   type TwitterPost,
   type InsertTwitterPost
 } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -27,6 +29,62 @@ export interface IStorage {
   getTwitterPosts(): Promise<TwitterPost[]>;
   createTwitterPost(post: InsertTwitterPost): Promise<TwitterPost>;
   getLatestTwitterPosts(limit: number): Promise<TwitterPost[]>;
+}
+
+export class DatabaseStorage implements IStorage {
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
+    return user;
+  }
+
+  async createConsultation(insertConsultation: InsertConsultation): Promise<Consultation> {
+    const [consultation] = await db
+      .insert(consultations)
+      .values(insertConsultation)
+      .returning();
+    return consultation;
+  }
+
+  async getConsultations(): Promise<Consultation[]> {
+    return await db.select().from(consultations);
+  }
+
+  async getGearProducts(): Promise<GearProduct[]> {
+    return await db.select().from(gearProducts);
+  }
+
+  async getGearProductsByCategory(category: string): Promise<GearProduct[]> {
+    return await db.select().from(gearProducts).where(eq(gearProducts.category, category));
+  }
+
+  async getTwitterPosts(): Promise<TwitterPost[]> {
+    return await db.select().from(twitterPosts).orderBy(twitterPosts.createdAt);
+  }
+
+  async createTwitterPost(insertTwitterPost: InsertTwitterPost): Promise<TwitterPost> {
+    const [post] = await db
+      .insert(twitterPosts)
+      .values(insertTwitterPost)
+      .returning();
+    return post;
+  }
+
+  async getLatestTwitterPosts(limit: number): Promise<TwitterPost[]> {
+    return await db.select().from(twitterPosts).orderBy(twitterPosts.createdAt).limit(limit);
+  }
 }
 
 export class MemStorage implements IStorage {
@@ -259,4 +317,4 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
