@@ -115,7 +115,7 @@ export class MemStorage implements IStorage {
     const products: InsertGearProduct[] = [
       {
         name: "Adventure Helmets",
-        description: "Premium dual-sport helmets for adventure touring",
+        description: "Premium dual sport helmets for adventure touring",
         category: "helmets",
         priceMin: 8500,
         priceMax: 65000,
@@ -181,7 +181,7 @@ export class MemStorage implements IStorage {
         content: "Hello, aspiring biker! 🏍️\n\nChoosing the right motorcycle isn't just about picking a model, it's about finding the perfect fit for your needs & budget. I offer consultation sessions to guide you through essential factors such as:\n✅ Motorcycle types – Which suits your riding style?",
         author: "NduthiGear",
         handle: "nduthigear",
-        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
+        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hrs ago
         likes: 24,
         retweets: 8,
         replies: 5,
@@ -192,7 +192,7 @@ export class MemStorage implements IStorage {
         content: "Adventure bike spotlight: BMW GS series vs Honda Africa Twin 🏁\n\nBoth are excellent choices for Kenya's diverse terrain:\n- BMW: Superior electronics, premium feel\n- Honda: Better value, proven reliability\n\nWhich would you choose for your next adventure?",
         author: "NduthiGear",
         handle: "nduthigear", 
-        createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 hours ago
+        createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 hrs ago
         likes: 42,
         retweets: 15,
         replies: 12,
@@ -214,7 +214,7 @@ export class MemStorage implements IStorage {
         content: "Confidence riding tip: Master the basics before attempting advanced maneuvers! 💪\n\nStart with:\n1. Smooth throttle control\n2. Progressive braking\n3. Body positioning\n4. Looking where you want to go\n\nBook a confidence session if you need guidance!",
         author: "NduthiGear", 
         handle: "nduthigear",
-        createdAt: new Date(Date.now() - 12 * 60 * 60 * 1000), // 12 hours ago
+        createdAt: new Date(Date.now() - 12 * 60 * 60 * 1000), // 12 hrs ago
         likes: 38,
         retweets: 19,
         replies: 7,
