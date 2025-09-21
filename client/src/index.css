@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210, 17%, 7%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(210, 12%, 16%);
+  --muted-foreground: hsl(0, 0%, 69%);
+  --popover: hsl(210, 17%, 12%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(210, 17%, 12%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(210, 12%, 26%);
+  --input: hsl(210, 12%, 16%);
+  --primary: hsl(14, 100%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(210, 12%, 16%);
+  --secondary-foreground: hsl(0, 0%, 90%);
+  --accent: hsl(210, 12%, 16%);
+  --accent-foreground: hsl(0, 0%, 90%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(14, 100%, 60%);
+  --radius: 0.5rem;
+  
+  /* Custom colors for motorcycle theme */
+  --dark-primary: hsl(0, 0%, 7%);
+  --dark-secondary: hsl(0, 0%, 12%);
+  --orange-accent: hsl(14, 100%, 60%);
+  --chrome: hsl(0, 0%, 75%);
+  --chrome-dark: hsl(0, 0%, 54%);
+  --text-primary: hsl(0, 0%, 100%);
+  --text-secondary: hsl(0, 0%, 90%);
+  --text-muted: hsl(0, 0%, 69%);
+}
+
+.dark {
+  --background: hsl(210, 17%, 7%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(210, 12%, 16%);
+  --muted-foreground: hsl(0, 0%, 69%);
+  --popover: hsl(210, 17%, 12%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(210, 17%, 12%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(210, 12%, 26%);
+  --input: hsl(210, 12%, 16%);
+  --primary: hsl(14, 100%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(210, 12%, 16%);
+  --secondary-foreground: hsl(0, 0%, 90%);
+  --accent: hsl(210, 12%, 16%);
+  --accent-foreground: hsl(0, 0%, 90%);
+  --destructive: hsl(0, 62%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(14, 100%, 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background: var(--dark-primary);
+    color: var(--text-primary);
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+/* Custom hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, 
+    hsla(0, 0%, 7%, 0.9) 0%, 
+    hsla(0, 0%, 12%, 0.8) 50%, 
+    hsla(14, 100%, 60%, 0.1) 100%
+  );
+}
+
+/* Chrome border effect */
+.chrome-border {
+  border-image: linear-gradient(45deg, 
+    var(--chrome), 
+    var(--chrome-dark), 
+    var(--chrome)
+  ) 1;
+}
+
+/* Custom utility classes */
+.text-orange-accent {
+  color: var(--orange-accent);
+}
+
+.bg-orange-accent {
+  background-color: var(--orange-accent);
+}
+
+.border-orange-accent {
+  border-color: var(--orange-accent);
+}
+
+.hover\:text-orange-accent:hover {
+  color: var(--orange-accent);
+}
+
+.hover\:bg-orange-accent:hover {
+  background-color: var(--orange-accent);
+}
+
+.hover\:border-orange-accent:hover {
+  border-color: var(--orange-accent);
+}
+
+.bg-dark-primary {
+  background-color: var(--dark-primary);
+}
+
+.bg-dark-secondary {
+  background-color: var(--dark-secondary);
+}
+
+.text-chrome {
+  color: var(--chrome);
+}
+
+.text-chrome-dark {
+  color: var(--chrome-dark);
+}
+
+.border-chrome {
+  border-color: var(--chrome);
+}
+
+.border-chrome-dark {
+  border-color: var(--chrome-dark);
+}

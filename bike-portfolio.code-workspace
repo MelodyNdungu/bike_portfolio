@@ -1,0 +1,25 @@
+{
+    "folders": [
+		{
+			"name": "shared",
+			"path": "../Downloads/BikeSocialPortfolio/shared"
+		},
+		{
+			"name": "bike_portfolio",
+			"path": "."
+		},
+		{
+			"name": "client",
+			"path": "../Downloads/BikeSocialPortfolio/client"
+		},
+		{
+			"name": "server",
+			"path": "../Downloads/BikeSocialPortfolio/server"
+		},
+		{
+			"name": "scripts",
+			"path": "../Downloads/BikeSocialPortfolio/scripts"
+		}
+	],
+    "settings": {}
+}
